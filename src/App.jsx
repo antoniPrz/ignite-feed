@@ -18,11 +18,9 @@ export function App() {
             contenido='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore non optio nihil aut, iusto repudiandae. Provident id blanditiis dicta!'
           />
           <Post
-            autor='Angel'
+            autor='Ana'
             contenido='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore non optio nihil aut, iusto repudiandae. Provident id blanditiis dicta!'
           />
-
-          <Post />
         </main>
       </div>
     </>
