@@ -4,6 +4,7 @@ export function Post(props) {
   return (
     <>
       <article className={styles.post}>
+        {/* header  */}
         <header>
           <div className={styles.author}>
             <img className={styles.avatar} src={props.avatar} alt='' />
@@ -17,6 +18,7 @@ export function Post(props) {
           </time>
         </header>
 
+        {/* Contenido */}
         <div className={styles.content}>
           <p>Fala galeraa 👋</p>
           <p>
@@ -35,6 +37,13 @@ export function Post(props) {
             <a href='#'> #rocketseat</a>
           </p>
         </div>
+
+        {/* Formulario */}
+        <form action='' className={styles.commentForm}>
+          <strong>Deje su Feedback</strong>
+          <textarea placeholder='Su comentario aqui' />
+          <button type='submit'>Publicar</button>
+        </form>
       </article>
     </>
   );
