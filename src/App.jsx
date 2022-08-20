@@ -1,5 +1,5 @@
 import { Header } from './components/Header';
-import { Post } from './Post';
+import { Post } from './components/Post';
 
 import styles from './App.module.css';
 import './global.css';
@@ -14,11 +14,15 @@ export function App() {
         <Sidebar />
         <main>
           <Post
-            autor='Angel'
+            autor='Angel Paez'
+            cargo='Dev Ops'
+            avatar='https://github.com/merma158.png'
             contenido='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore non optio nihil aut, iusto repudiandae. Provident id blanditiis dicta!'
           />
           <Post
-            autor='Ana'
+            autor='Ana Garrido'
+            cargo='UI Designer'
+            avatar='https://github.com/BiancaMalta.png'
             contenido='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam dolore non optio nihil aut, iusto repudiandae. Provident id blanditiis dicta!'
           />
         </main>

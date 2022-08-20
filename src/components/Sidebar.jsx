@@ -7,7 +7,7 @@ export function Sidebar() {
       <aside className={styles.sidebar}>
         <img
           className={styles.cover}
-          src='https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50'
+          src='https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50'
           alt='imagen cover usuario'
         />
         <div className={styles.profile}>
