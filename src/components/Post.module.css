@@ -109,6 +109,16 @@ header time {
   line-height: 1.4;
 }
 
+.commentForm footer{
+  visibility: hidden;
+  max-height: 0;
+}
+
+.commentForm:focus-within footer{
+  visibility: visible;
+  max-height: none;
+}
+
 .commentForm button {
   background-color: var(--green-500);
   padding: 1rem 1.5rem;
@@ -124,4 +134,9 @@ header time {
 
 .commentForm button:hover {
   background: var(--green-300);
+}
+
+
+.commentList{
+  margin-top:2rem;
 }

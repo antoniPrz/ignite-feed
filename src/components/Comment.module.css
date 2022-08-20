@@ -1,0 +1,35 @@
+.comment{
+  display:flex;
+  margin-top:1.5rem;
+  gap:1rem;
+}
+
+.comment > img{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+
+}
+
+.commentBox {
+  flex:1
+}
+
+.commentContent{
+  background:var(--gray-600);
+  border-radius:8px;
+  height:6rem;
+}
+
+.commentContent header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+ 
+}
+
+.authorAndTime{
+  display:flex;
+  flex-direction:column;
+}
+
