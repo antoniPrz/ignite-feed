@@ -27,17 +27,6 @@ header p {
   align-items: center;
 }
 
-.avatar {
-  /* box-sizing: initial; //una forma de los bordes no alterear el tamaño de la imagen */
-
-  width: calc(3rem + 12px);
-  height: calc(3rem + 12px);
-  border-radius: 8px;
-
-  border: 4px solid var(--gray-800);
-  outline: 2px solid var(--green-500);
-}
-
 .authorInfo {
   display: flex;
   flex-direction: column;

@@ -1,42 +1,54 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import { formatDistance } from 'date-fns/esm';
+// import { es } from 'date-fns/locale/es';
+
+import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
-export function Post(props) {
+export function Post({ author, content, publishedAt }) {
+  const publishedDataFormated = format(
+    publishedAt,
+    "d 'de' LLLL 'a las' HH:mm"
+  );
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    addSuffix: true,
+  });
+
   return (
     <>
       <article className={styles.post}>
         {/* header  */}
         <header>
           <div className={styles.author}>
-            <img className={styles.avatar} src={props.avatar} alt='' />
+            <Avatar src={author.avatarUrl} />
             <div className={styles.authorInfo}>
-              <strong>{props.autor}</strong>
-              <span>{props.cargo}</span>
+              <strong>{author.name}</strong>
+              <span>{author.role}</span>
             </div>
           </div>
-          <time title='18 Agosto 13:00' dateTime=' 2022-08-13 13:00:34'>
-            Publicado hace 1h
+          <time
+            title={publishedDataFormated}
+            dateTime={publishedAt.toISOString()}
+          >
+            {publishedDateRelativeToNow}
           </time>
         </header>
 
         {/* Contenido */}
         <div className={styles.content}>
-          <p>Fala galeraa 👋</p>
-          <p>
-            Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
-            no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare
-            🚀
-          </p>
-          <p>
-            <a href='#'> jane.design/doctorcare</a>
-          </p>
-          <p>
-            <a href='#'>#novoprojeto </a>
-            {''}
-            <a href='#'>#nlw</a>
-            {''}
-            <a href='#'> #rocketseat</a>
-          </p>
+          {content.map((line) => {
+            if (line.type === 'paragraph') {
+              return <p>{line.content}</p>;
+            } else if (line.type === 'link') {
+              return (
+                <p>
+                  <a href='#'>{line.content}</a>
+                </p>
+              );
+            }
+          })}
         </div>
 
         {/* Formulario */}
