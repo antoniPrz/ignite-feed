@@ -10,7 +10,7 @@ export function Comment() {
         <img src='https://github.com/FabioNeves00.png' alt='' />
         <div className={styles.commentBox}>
           <div className={styles.commentContent}>
-            <header>
+            <header className={styles.commentContentHeader}>
               <div className={styles.authorAndTime}>
                 <strong>nombre</strong>
                 <time title='18 Agosto 13:00' dateTime=' 2022-08-13 13:00:34'>
@@ -18,7 +18,7 @@ export function Comment() {
                 </time>
               </div>
               <button>
-                <Trash size={20} />
+                <Trash size={24} />
               </button>
             </header>
             <p>Muito bom Devon, parabéns!! 👏👏</p>
