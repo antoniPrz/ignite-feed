@@ -9,7 +9,9 @@ import styles from './Post.module.css';
 
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(['mi primer comentario ']);
-  const [newComentText, setNewCommentText] = useState('');
+
+  const [newCommentText, setNewCommentText] = useState('');
+
   const publishedDataFormated = format(
     publishedAt,
     "d 'de' LLLL 'a las' HH:mm"
@@ -19,14 +21,23 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true,
   });
 
+  const isNewCommentEmpty = newCommentText.length === 0;
+
   function newCommentChange(event) {
     setNewCommentText(event.target.value);
   }
 
   function handleCreateNewComent(event) {
     event.preventDefault();
-    setComments([...comments, newComentText]);
+    setComments([...comments, newCommentText]);
     setNewCommentText('');
+  }
+
+  function deleteComment(comment) {
+    const filteredComments = comments.filter((element) => {
+      return element !== comment;
+    });
+    setComments(filteredComments);
   }
 
   return (
@@ -70,15 +81,23 @@ export function Post({ author, content, publishedAt }) {
           <textarea
             placeholder='Su comentario aqui'
             onChange={newCommentChange}
-            value={newComentText}
+            value={newCommentText}
           />
           <footer>
-            <button type='submit'>Publicar</button>
+            <button type='submit' disabled={isNewCommentEmpty}>
+              Publicar
+            </button>
           </footer>
         </form>
         <div className={styles.commentList}></div>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          );
         })}
       </article>
     </>
